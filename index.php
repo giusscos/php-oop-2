@@ -1,6 +1,7 @@
 <?php
 
-include __DIR__ . '/classes/Order.php';
+include_once __DIR__ . '/classes/Order.php';
+include_once __DIR__ . '/classes/ItemOrder.php';
 
 include_once __DIR__ . '/classes/Product.php';
 include_once __DIR__ . '/classes/PetFood.php';
@@ -30,8 +31,11 @@ $food1 = new PetFood($dataFood, '10/10/2022');
 $toy1 = new PetToy($dataToy, 'Tessuto');
 $house1 = new PetHouse($dataHouse, 10);
 
-$order1 = new Order('27/09/2022', $food1);
+$price = $food1->getPrice();
 
-$order1->addProduct($toy1);
+$order1 = new Order();
+
+$order1->addProduct($food1, $price);
+$order1->addProduct($food1, $price);
 
 var_dump($order1);

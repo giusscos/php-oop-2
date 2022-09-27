@@ -4,7 +4,7 @@ class Product
 {
     public $name;
     public $desc;
-    public $price = 0;
+    public $price = 0.00;
     public $brand;
 
     function __construct($param)
