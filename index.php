@@ -1,6 +1,7 @@
 <?php
 
 include __DIR__ . '/classes/Product.php';
+include_once __DIR__ . '/classes/PetFood.php';
 
 $data = [
     "name" => 'Croccantini di pollo',
@@ -11,4 +12,10 @@ $data = [
 
 $prod1 = new Product($data);
 
-var_dump($prod1);
+$dataFood = [
+    "expire-date" => "10/01/2022",
+];
+
+$food1 = new PetFood($data, $dataFood);
+
+var_dump($food1);
