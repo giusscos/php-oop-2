@@ -1,13 +1,13 @@
 <?php
 
 include_once __DIR__ . '/classes/Order.php';
-include_once __DIR__ . '/classes/ItemOrder.php';
 
 include_once __DIR__ . '/classes/Product.php';
 include_once __DIR__ . '/classes/PetFood.php';
 include_once __DIR__ . '/classes/PetToy.php';
 include_once __DIR__ . '/classes/PetHouse.php';
 
+// Creazione prodotti
 $dataFood = [
     "name" => 'Croccantini di pollo',
     "brand" => 'Sium',
@@ -27,15 +27,18 @@ $dataHouse = [
     "price" => 99.70,
 ];
 
+// Creazione prodotti specifici 
 $food1 = new PetFood($dataFood, '10/10/2022');
 $toy1 = new PetToy($dataToy, 'Tessuto');
 $house1 = new PetHouse($dataHouse, 10);
 
-$price = $food1->getPrice();
-
 $order1 = new Order();
 
-$order1->addProduct($food1, $price);
-$order1->addProduct($food1, $price);
+// Aggiunta prodotti all'ordine 
+$order1->addProduct($food1, $food1->getPrice());
+$order1->addProduct($food1, $food1->getPrice());
+$order1->addProduct($toy1, $toy1->getPrice());
 
-var_dump($order1);
+// var_dump($order1);
+var_dump($order1->getTotal());
+var_dump($order1->getQuantity());

@@ -19,7 +19,14 @@ class Order{
         array_push($this->products, $product);
     }
 
+    public function getProducts(){
+        return $this->products; 
+    }
+
     public function getTotal(){
-        return $this->total_order;
+        return 'Totale ordine: &euro; ' . $this->total_order . ';';
+    }
+    public function getQuantity(){
+        return 'Hai ordinato: ' . $this->quantity . ' oggetti!';
     }
 }
