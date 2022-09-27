@@ -7,7 +7,6 @@ class Product
     public $price;
     public $brand;
 
-
     function __construct($param)
     {
         $this->name = $param["name"];

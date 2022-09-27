@@ -6,9 +6,9 @@ class PetFood extends Product
 {
     public $expire_date;
 
-    function __construct($param)
+    function __construct($param, $expire_date)
     {
         parent::__construct($param);
-        $this->expire_date = $param["expire_date"];
+        $this->expire_date = $expire_date;
     }
 }
