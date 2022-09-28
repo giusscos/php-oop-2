@@ -6,9 +6,13 @@ class PetToy extends Product
 {
     public $material;
 
-    function __construct($param, $material)
+    function __construct($param, string $material)
     {
         parent::__construct($param);
-        $this->material = $material;
+        if($material){
+            $this->material = $material;
+        } else {
+            throw new Exception('Inserimento materiale non valido');
+        }
     }
 }

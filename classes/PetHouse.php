@@ -6,9 +6,13 @@ class PetHouse extends Product
 {
     public $square;
 
-    function __construct($param, $square)
+    function __construct($param, float $square)
     {
         parent::__construct($param);
-        $this->square = $square;
+        if($square){
+            $this->square = $square;
+        } else{
+            throw new Exception('Inserimento metri quadrati non valido');
+        }
     }
 }
