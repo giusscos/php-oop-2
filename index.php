@@ -41,10 +41,13 @@ try{
 }
 
 try{
-    $house1 = new PetHouse($dataHouse, 10);
+    $house1 = new PetHouse($dataHouse, 10, 'Argilla');
 }catch (Exception $e){
     echo $e;
 }
+
+var_dump($toy1->getMaterial());
+var_dump($house1->getMaterial());
 
 $order1 = new Order();
 
