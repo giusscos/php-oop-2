@@ -1,6 +1,7 @@
 <?php
 
-class Order{
+class Order
+{
     public $date_order;
     public $total_order = 0.00;
     public $quantity = 0; // quantita' totale ordine
@@ -8,25 +9,26 @@ class Order{
 
     function __construct()
     {
-        // $this->getTotal($price);  
-        // $this->date_order = $date_order;   
-        // $this->addProduct($product);  
     }
 
-    public function addProduct($product, $price){
+    public function addProduct($product, $price)
+    {
         $this->quantity++;
         $this->total_order = $this->total_order + $price;
         array_push($this->products, $product);
     }
 
-    public function getProducts(){
-        return $this->products; 
+    public function getProducts()
+    {
+        return $this->products;
     }
 
-    public function getTotal(){
+    public function getTotal()
+    {
         return 'Totale ordine: &euro; ' . $this->total_order . ';';
     }
-    public function getQuantity(){
+    public function getQuantity()
+    {
         return 'Hai ordinato: ' . $this->quantity . ' oggetti!';
     }
 }

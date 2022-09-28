@@ -1,14 +1,15 @@
 <?php
 
 include_once __DIR__ . '/Product.php';
+include_once __DIR__ . '/MadeOf.php';
 
 class PetToy extends Product
 {
-    public $material;
+    use MadeOF;
 
-    function __construct($param, $material)
+    function __construct($param, string $material)
     {
         parent::__construct($param);
-        $this->material = $material;
+        $this->setMaterial($material);
     }
 }

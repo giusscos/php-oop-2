@@ -46,9 +46,6 @@ try{
     echo $e;
 }
 
-var_dump($toy1->getMaterial());
-var_dump($house1->getMaterial());
-
 $order1 = new Order();
 
 // Aggiunta prodotti all'ordine 

@@ -31,9 +31,23 @@ $dataHouse = [
 ];
 
 // Creazione prodotti specifici 
-$food1 = new PetFood($dataFood, '10/10/2022');
-$toy1 = new PetToy($dataToy, 'Tessuto');
-$house1 = new PetHouse($dataHouse, 10);
+try{
+    $food1 = new PetFood($dataFood, '20/09/2022');
+} catch(Exception $e){
+    echo $e;
+}
+
+try{
+    $toy1 = new PetToy($dataToy, 'Plastica');
+}catch (Exception $e){
+    echo $e;
+}
+
+try{
+    $house1 = new PetHouse($dataHouse, 10, 'Argilla');
+}catch (Exception $e){
+    echo $e;
+}
 
 $order1 = new Order();
 
